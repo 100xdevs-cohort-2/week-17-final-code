@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  app:
+    image: week-17
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./apps:/app/apps
+      - ./packages:/app/packages
+    command: npm run dev
+    environment:
+      NODE_ENV: development
+
+networks:
+  default:
+    driver: bridge

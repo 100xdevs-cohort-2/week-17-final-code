@@ -32,7 +32,7 @@ export const P2PTransactions = ({
               </div>
             </div>
             <div className='flex flex-col justify-center'>
-              {t.transactionType === 'Send' ? <>-</> : <>+</>} Rs{' '}
+              {t.transactionType === 'Sent' ? <>-</> : <>+</>} Rs{' '}
               {t.amount / 100}
             </div>
           </div>

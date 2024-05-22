@@ -20,5 +20,10 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.2.5",
+    "tailwind-merge": "^2.3.0"
+  }
 }

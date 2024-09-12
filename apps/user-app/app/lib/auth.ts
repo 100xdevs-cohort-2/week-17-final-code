@@ -10,9 +10,7 @@ export const authOptions = {
             phone: { label: "Phone number", type: "text", placeholder: "1231231231", required: true },
             password: { label: "Password", type: "password", required: true }
           },
-          // TODO: User credentials type from next-aut
           async authorize(credentials: any) {
-            // Do zod validation, OTP validation here
             const hashedPassword = await bcrypt.hash(credentials.password, 10);
             const existingUser = await db.user.findFirst({
                 where: {

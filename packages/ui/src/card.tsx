@@ -14,7 +14,7 @@ export function Card({
       <h1 className="text-xl border-b pb-2">
         {title}
       </h1>
-      <p>{children}</p>
+      <div>{children}</div>
     </div>
   );
 }

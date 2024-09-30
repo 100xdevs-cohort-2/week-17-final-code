@@ -30,6 +30,7 @@ model OnRampTransaction {
   token     String       @unique
   provider  String
   amount    Int
+  method    Method
   startTime DateTime
   userId    Int
   user      User         @relation(fields: [userId], references: [id])
@@ -52,4 +53,8 @@ enum OnRampStatus {
   Success
   Failure
   Processing
+}
+enum Method {
+  Recieved
+  Sent
 }

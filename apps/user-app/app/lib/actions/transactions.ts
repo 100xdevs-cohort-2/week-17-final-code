@@ -1,5 +1,5 @@
 "use server"
-import prisma from "@repo/db/client";
+import prisma from "../../../../../packages/db/src";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../auth";
 
@@ -11,12 +11,13 @@ export default async function transactions (amount:string,provider:string){
     if(!session.user.id || !session.user ){
         return  "Unauthorised request"
     }
-  const transactionToken = (Math.random()+10*18).toString()
+const transactionToken = (Math.random()+10*18).toString()
 const transaction = await prisma.onRampTransaction.create({
     data:{
         userId:Number(session.user.id),
         token:transactionToken,
         amount:TransactionAmount,
+        method:"Recieved",
         status:"Processing",
         provider:provider,
         startTime:isoString

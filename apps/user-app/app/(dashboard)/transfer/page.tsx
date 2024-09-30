@@ -1,4 +1,5 @@
-import prisma from "@repo/db/client";
+"use server"
+import prisma from "../../../../../packages/db/src";
 import { AddMoney } from "../../../components/AddMoneyCard";
 import { BalanceCard } from "../../../components/BalanceCard";
 import { OnRampTransactions } from "../../../components/OnRampTransactions";
@@ -29,7 +30,8 @@ async function getOnRampTransactions() {
         time: t.startTime,
         amount: t.amount,
         status: t.status,
-        provider: t.provider
+        provider: t.provider,
+        method:t.method
     }))
 }
 

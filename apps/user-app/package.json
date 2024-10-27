@@ -7,6 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint . --max-warnings 0"
+
+
+    
   },
   "dependencies": {
     "@repo/store": "*",

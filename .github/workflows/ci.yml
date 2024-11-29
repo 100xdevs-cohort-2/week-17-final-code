@@ -2,7 +2,7 @@ name: Creating CI
 
 on:
   pull_request:
-  branches: [main]
+  branches: [migration]
 
 job:
   Continuous_Integration:
